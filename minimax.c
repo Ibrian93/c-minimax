@@ -20,6 +20,7 @@ int main(void) {
     NODE *p = (NODE *)malloc(sizeof(NODE));
     char tab[N][N];
     matrix_init(&p, tab, &n_pieces);
+    matrix_print(&p);
 }
 
 void matrix_init(NODE**mini, char tab[N][N], int *n_pieces) {
@@ -31,9 +32,20 @@ void matrix_init(NODE**mini, char tab[N][N], int *n_pieces) {
     }
     tab[pc][pc] = 'O';
     for(i = 0; i < N; i++) {
-        for(j = 0; j < N; j++) {
-            (*mini) -> game[i][j] = tab[i][j];
+        for (j = 0; j < N; j++) {
+            (*mini)->game[i][j] = tab[i][j];
         }
+
+        *n_pieces = dim - 1;
     }
-    *n_pieces = dim - 1;
+}
+
+void matrix_print(NODE**table) {
+    int i, j;
+    for(i = 0; i < N; i++) {
+        for(j = 0; j < N; j++) {
+            printf("| %c |\t", (*table)->game[i][j]);
+        }
+        printf("\n");
+    }
 }
