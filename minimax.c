@@ -1,17 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include <time.h>
+#include "minimax.h"
 #define dim 64
+#define N 8
 
-typedef struct node {
+struct node{
     struct node **child;
     int n_child;
-    char game[dim];
+    char game[N][N];
     int value;
-}Node;
-
+};
 
 int main(void) {
     srand(time(NULL));
+    int n_pieces = 0;
+    NODE *p = (NODE *)malloc(sizeof(NODE));
+    char tab[N][N];
+    matrix_init(&p, tab, &n_pieces);
+}
+
+void matrix_init(NODE**mini, char tab[N][N], int *n_pieces) {
+    int i, j, pc = rand() % N;
+    for(i = 0; i < N; i++) {
+        for(j = 0; j < N; j++) {
+            tab[i][j] = ' ';
+        }
+    }
+    tab[pc][pc] = 'O';
+    for(i = 0; i < N; i++) {
+        for(j = 0; j < N; j++) {
+            (*mini) -> game[i][j] = tab[i][j];
+        }
+    }
+    *n_pieces = dim - 1;
 }
