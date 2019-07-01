@@ -30,7 +30,7 @@ void matrix_init(NODE**mini, char tab[N][N], int *n_pieces) {
             tab[i][j] = ' ';
         }
     }
-    tab[pc][pc] = 'O';
+    tab[7][pc] = 'O';
     for(i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
             (*mini)->game[i][j] = tab[i][j];
@@ -44,8 +44,9 @@ void matrix_print(NODE**table) {
     int i, j;
     for(i = 0; i < N; i++) {
         for(j = 0; j < N; j++) {
-            printf("| %c |\t", (*table)->game[i][j]);
+            printf("| %c |", (*table)->game[i][j]);
         }
         printf("\n");
     }
 }
+
