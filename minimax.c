@@ -16,11 +16,14 @@ struct node{
 
 int main(void) {
     srand(time(NULL));
-    int n_pieces = 0;
+    int n_pieces = 0, player;
     NODE *p = (NODE *)malloc(sizeof(NODE));
     char tab[N][N];
     matrix_init(&p, tab, &n_pieces);
     matrix_print(&p);
+    while(n_pieces != 0) {
+        printf("Player turn\n");
+    }
 }
 
 void matrix_init(NODE**mini, char tab[N][N], int *n_pieces) {
@@ -48,5 +51,9 @@ void matrix_print(NODE**table) {
         }
         printf("\n");
     }
+}
+
+void player_game(NODE**player, int *n_pieces, int *player) {
+
 }
 
