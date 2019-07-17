@@ -18,11 +18,13 @@ int main(void) {
     srand(time(NULL));
     int n_pieces = 0, player;
     NODE *p = (NODE *)malloc(sizeof(NODE));
+    int *n_pieces_col = (int *)calloc(N, sizeof(int));
     char tab[N][N];
     matrix_init(&p, tab, &n_pieces);
     matrix_print(&p);
     while(n_pieces != 0) {
-        printf("Player turn\n");
+        printf("Player turn : chose column please\n");
+        player_game(&p, &n_pieces, n_pieces_col, &player);
     }
 }
 
@@ -53,7 +55,11 @@ void matrix_print(NODE**table) {
     }
 }
 
-void player_game(NODE**player, int *n_pieces, int *player) {
-
+void player_game(NODE**play, int *n_pieces, int *n_pieces_col, int *player) {
+    int a;
+    scanf("%d", &a); a--;
+    if(n_pieces_col[a] != 0) {
+        (*play)->game
+    }
 }
 
