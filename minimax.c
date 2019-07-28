@@ -25,6 +25,8 @@ int main(void) {
     while(n_pieces != 0) {
         printf("Player turn : chose column please\n");
         player_game(&p, &n_pieces, n_pieces_col, &player);
+        matrix_print(&p);
+        n_pieces--;
     }
 }
 
@@ -57,9 +59,23 @@ void matrix_print(NODE**table) {
 
 void player_game(NODE**play, int *n_pieces, int *n_pieces_col, int *player) {
     int a;
-    scanf("%d", &a); a--;
+    scanf("%d", &a);
+    a--;
+    if(n_pieces_col[a] == N) {
+        while (n_pieces_col[a] == N) {
+            printf("Please, change the location of the piece\n");
+            scanf("%d", &a);
+            a--;
+        }
+    }
+
     if(n_pieces_col[a] != 0) {
-        (*play)->game
+        (*play)->game[N - 1 - n_pieces_col[a]][a] = 'X';
+        n_pieces_col[a]++;
+    }
+    else {
+        (*play)->game[N - 1][a] = 'X';
+        n_pieces_col[a]++;
     }
 }
 
