@@ -4,6 +4,7 @@
 #include <math.h>
 #include <time.h>
 #include "minimax.h"
+#include "pc_logic.h"
 #define dim 64
 #define N 8
 
@@ -26,6 +27,7 @@ int main(void) {
         printf("Player turn : chose column please\n");
         player_game(&p, &n_pieces, n_pieces_col, &player);
         matrix_print(&p);
+        pc_logic(&p);
         n_pieces--;
     }
 }
