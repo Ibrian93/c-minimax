@@ -11,7 +11,9 @@
 
 extern void pc_logic(NODE**game){
     (*game)->n_child = N;
-    (*game)->child = malloc(60);
+    (*game)->child = malloc(60); //to be discussed
+    tree_creation(&game);
+    minimax(&game);
 }
 
 
