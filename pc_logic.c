@@ -1,5 +1,5 @@
 //
-// Created by  on 2019-08-01.
+// Created by Brian Icochea on 2019-08-02.
 //
 
 #include <stdio.h>
@@ -9,9 +9,9 @@
 #include "pc_logic.h"
 #define N 8
 
-extern void pc_logic(NODE**game) {
-    (*game)->child = malloc(60); //let's ask why this
+extern void pc_logic(NODE**game){
     (*game)->n_child = N;
-    //tree_creation(game);
-    //minimax(game); //let's create the minimax algorithm in another c file https://en.wikipedia.org/wiki/Minimax
+    (*game)->child = malloc(60);
 }
+
+

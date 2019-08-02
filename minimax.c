@@ -8,13 +8,6 @@
 #define dim 64
 #define N 8
 
-struct node{
-    struct node **child;
-    int n_child;
-    char game[N][N];
-    int value;
-};
-
 int main(void) {
     srand(time(NULL));
     int n_pieces = 0, player;
