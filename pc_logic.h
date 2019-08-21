@@ -4,3 +4,4 @@
 extern void pc_logic(NODE**game);
 void tree_creation(NODE**game);
 void minimax(NODE**game);
+void create_node_level(NODE**game);

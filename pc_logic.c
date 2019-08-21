@@ -16,15 +16,15 @@ extern void pc_logic(NODE**game){
     minimax(game);
 }
 
-void tree_creation(NODE*game) {
+void tree_creation(NODE**game) {
     int i;
     create_node_level(game);
-    for(i = 0; i < game->n_child; i++) {
+    for(i = 0; i < (*game)->n_child; i++) {
 
     }
 }
 
-void create_node_level(NODE*parent){
+void create_node_level(NODE**parent){
     int i;
     for(i = 0; i < N; i++) {
         //creation node
